@@ -1,0 +1,128 @@
+version: 2
+
+models:
+
+  - name: product_age
+    description: "staging model for product age"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: nama_produk
+        description: "name of the product"
+        tests:
+          - not_null
+      - name: usia_hari
+        description: "age of the product"
+        tests:
+          - not_null
+    # tests:
+    #   - dbt_utils.unique_combination_of_columns:
+    #       combination_of_columns:
+    #         - nama_produk
+    #         - usia_hari
+
+  - name: transaction_product
+    description: "staging model for transaction product"
+    columns:
+      - name: transaction_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: jumlah_pembelian
+        description: "number of purchases of the product"
+        tests:
+          - not_null
+    columns:
+      - name: jumlah_penjualan
+        description: "number of sales of the product"
+        tests:
+          - not_null
+    columns:
+      - name: tanggal_transaksi
+        description: "transaction date of the product"
+        tests:
+          - not_null
+    columns:
+      - name: nama_produk
+        description: "name of the product"
+        tests:
+          - not_null
+    columns:
+      - name: tanggal_produksi
+        description: "production date of the product"
+        tests:
+          - not_null
+    # tests:
+    #   - dbt_utils.unique_combination_of_columns:
+    #       combination_of_columns:
+    #         - product_id
+
+  - name: available_stock
+    description: "staging model for available stock"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: nama_produk
+        description: "name of the product"
+        tests:
+          - not_null
+    columns:
+      - name: jumlah_stock
+        description: "The amount of production stock of the product"
+        tests:
+          - not_null
+    columns:
+      - name: lokasi_gudang
+        description: "Warehouse location of the product"
+        tests:
+          - not_null
+    # tests:
+    #   - dbt_utils.unique_combination_of_columns:
+    #       combination_of_columns:
+    #         - product_id
+
+  - name: category_statistic
+    description: "staging model for available category statistic"
+    columns:
+      - name: nama_kategori
+        description: "category name of the product"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: jumlah_produk
+        description: "production quantity of the product"
+        tests:
+          - not_null
+    columns:
+      - name: rata_usia_produk
+        description: "The amount of production stock of the product"
+        tests:
+          - not_null
+    # tests:
+    #   - dbt_utils.unique_combination_of_columns:
+    #       combination_of_columns:
+    #         - product_id
+
+  - name: time_analysis
+    description: "staging model for available time analysis"
+    columns:
+      - name: tanggal_transaksi
+        description: "category name of the transaction date"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: jumlah_penjualan
+        description: "production quantity of the product"
+        tests:
+          - not_null

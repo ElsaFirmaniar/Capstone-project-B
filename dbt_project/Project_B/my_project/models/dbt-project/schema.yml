@@ -1,0 +1,164 @@
+version: 2
+
+sources:
+  - name: dbt-project
+    database: dbt-project
+    schema: public
+
+    tables:
+      - name: product
+        columns:
+          - name: product_id
+            description: "Unique identifier for each product"
+            tests:
+              - unique
+              - not_null
+          - name: nama_produk
+            description: "Name of the product"
+            tests:
+              - not_null
+          - name: tanggal_produksi
+            description: "date product of the product"
+            tests:
+              - not_null
+          - name: tanggal_kedaluwarsa
+            description: "date exp of the product"
+            tests:
+              - not_null
+          - name: category_id
+            description: "Foreign key referencing product-category"
+            tests:
+              - relationships:
+                  to: source('dbt-project', 'productcategory')
+                  field: category_id
+          - name: supplier_id
+            description: "Foreign key referencing supplier"
+            tests:
+              - relationships:
+                  to: source('dbt-project', 'supplier')
+                  field: supplier_id
+            
+
+      - name: stock
+        columns:
+          - name: stock_id
+            description: "Unique identifier for each pstock"
+            tests:
+              - unique
+              - not_null
+          - name: product_id
+            description: "Foreign key referencing product"
+            tests:
+              - relationships:
+                  to: source('dbt-project', 'product')
+                  field: product_id
+          - name: jumlah_stok
+            description: "amount of stock"
+            tests:
+              - not_null
+          - name: lokasi_gudang
+            description: "Foreign key referencing warehouse-location"
+            tests:
+              - not_null
+
+      - name: transaction
+        columns:
+          - name: transaction_id
+            description: "Unique identifier for each transaction"
+            tests:
+              - unique
+              - not_null
+          - name: product_id
+            description: "Foreign key referencing product"
+            tests:
+              - relationships:
+                  to: source('dbt-project', 'product')
+                  field: product_id
+          - name: jumlah_pembelian
+            description: "number of purchases of the product"
+            tests:
+              - not_null
+          - name: jumlah_penjualan
+            description: "the number of sales of the product"
+            tests:
+              - not_null
+          - name: tanggal_transaksi
+            description: "transaction date of the product"
+            tests:
+              - not_null
+
+      - name: productcategory
+        columns:
+          - name: category_id
+            description: "Unique identifier for each product_cateory"
+            tests:
+              - unique
+              - not_null
+          - name: nama_kategori
+            description: "category name of the product"
+            tests:
+              - not_null
+
+      - name: supplier
+        columns:
+          - name: supplier_id
+            description: "Unique identifier for each supplier"
+            tests:
+              - unique
+              - not_null
+          - name: nama_supplier
+            description: "supplier name of the product"
+            tests:
+              - not_null
+          - name: kontak_supplier
+            description: "contact supplier of the product"
+            tests:
+              - not_null
+
+      - name: customer
+        columns:
+          - name: customer_id
+            description: "Unique identifier for each customer"
+            tests:
+              - unique
+              - not_null
+          - name: nama_pelanggan
+            description: "customer name"
+            tests:
+              - not_null
+          - name: alamat_pelanggan
+            description: "customer address"
+            tests:
+              - not_null
+
+      - name: timedimension
+        columns:
+          - name: date_id
+            description: "Unique identifier for each time-dimension"
+            tests:
+              - unique
+              - not_null
+          - name: tanggal
+            description: "date of the product"
+            tests:
+              - not_null
+          - name: bulan
+            description: "month on the time dimension date"
+            tests:
+              - not_null
+          - name: tahun
+            description: "year on the time dimension date"
+            tests:
+              - not_null
+
+      - name: warehouselocation
+        columns:
+          - name: location_id
+            description: "Unique identifier for each warehouse_location"
+            tests:
+              - unique
+              - not_null
+          - name: nama_lokasi
+            description: "warehouse location of the product"
+            tests:
+              - not_null

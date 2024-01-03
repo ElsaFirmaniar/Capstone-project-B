@@ -1,0 +1,99 @@
+[0m22:02:11.798201 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFF5E941D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFF5E85890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFF5BBD290>]}
+
+
+============================== 22:02:11.808214 | 4052a755-8684-4ac9-8bda-f91eca6f0a71 ==============================
+[0m22:02:11.808214 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:02:11.813204 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': 'C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt-project/dbt-profiles', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init my_project', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:02:11.816198 [info ] [MainThread]: Creating dbt configuration folder at C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt-project/dbt-profiles
+[0m22:02:11.824213 [debug] [MainThread]: Starter project path: C:\Users\Elsa\Tugas\Capstone-Project\capstone_brief\.venv\Lib\site-packages\dbt\include\starter_project
+[0m22:02:11.879203 [info ] [MainThread]: 
+Your new dbt project "my_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:02:11.886206 [info ] [MainThread]: Setting up your profile.
+[0m22:02:39.161507 [info ] [MainThread]: Profile my_project written to C:\Users\Elsa\Tugas\Capstone-Project\capstone_brief\dbt-project\dbt-profiles\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:02:39.165516 [debug] [MainThread]: Command `dbt init` succeeded at 22:02:39.164510 after 27.41 seconds
+[0m22:02:39.166510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFF5C47290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFF5C474D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFF5C82690>]}
+[0m22:02:39.168522 [debug] [MainThread]: Flushing usage events
+[0m22:16:53.818914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1CE31B510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1CDB5C990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1CDE311D0>]}
+
+
+============================== 22:16:53.841907 | c48bf1e3-b20d-414e-b0be-3a2360067cf8 ==============================
+[0m22:16:53.841907 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:16:53.849908 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt_project/Project_B/dbt-profiles', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init my_project', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:16:53.857966 [info ] [MainThread]: A project called my_project already exists here.
+[0m22:16:53.878835 [debug] [MainThread]: Command `dbt init` succeeded at 22:16:53.877859 after 0.34 seconds
+[0m22:16:53.882832 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1CE33B190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1C6F194D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1CDF0FA90>]}
+[0m22:16:53.885821 [debug] [MainThread]: Flushing usage events
+[0m22:31:25.070143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DC8CFBDD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DC881A990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DC85A04D0>]}
+
+
+============================== 22:31:25.081151 | dcc18acb-530d-4657-86b7-d5a218a3cf9c ==============================
+[0m22:31:25.081151 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:31:25.090144 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt_project/Project_B/dbt-profiles', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init my_project', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:31:25.096157 [info ] [MainThread]: A project called my_project already exists here.
+[0m22:31:25.105153 [debug] [MainThread]: Command `dbt init` succeeded at 22:31:25.104152 after 0.17 seconds
+[0m22:31:25.107150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DC18C94D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DC8AC21D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020DC18D8890>]}
+[0m22:31:25.109155 [debug] [MainThread]: Flushing usage events
+[0m22:39:12.612358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AA83724E50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AA836D3D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AA83254E10>]}
+
+
+============================== 22:39:12.623352 | 7b2febe7-3358-4c26-a7b4-81cc21e2092a ==============================
+[0m22:39:12.623352 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:39:12.627351 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt_project/Project_B/dbt-profiles', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init my_project', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:39:12.634357 [info ] [MainThread]: A project called my_project already exists here.
+[0m22:39:12.642356 [debug] [MainThread]: Command `dbt init` succeeded at 22:39:12.641345 after 0.23 seconds
+[0m22:39:12.647365 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AAFC2394D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AAFBFAFFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AA83278B50>]}
+[0m22:39:12.649352 [debug] [MainThread]: Flushing usage events
+[0m22:44:20.604506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ABF533D2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ABF20B65D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ABF533C590>]}
+
+
+============================== 22:44:20.616499 | 16cf7812-8eed-4c49-8d68-b662d5b9f2df ==============================
+[0m22:44:20.616499 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:44:20.621502 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt_project/Project_B/dbt-profiles', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init my_project', 'send_anonymous_usage_stats': 'True'}
+[0m22:44:20.629507 [info ] [MainThread]: A project called my_project already exists here.
+[0m22:44:20.636508 [debug] [MainThread]: Command `dbt init` succeeded at 22:44:20.636508 after 0.33 seconds
+[0m22:44:20.639511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ABF4BF00D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ABEDEC94D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ABEDE6F610>]}
+[0m22:44:20.645508 [debug] [MainThread]: Flushing usage events
+[0m22:50:34.908636 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2137330D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D213C1A690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D213730650>]}
+
+
+============================== 22:50:34.920643 | 55ce13cc-b83d-443f-b19c-dbc5f80d13e6 ==============================
+[0m22:50:34.920643 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:50:34.925640 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt_project/Project_B/dbt-profiles', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init my_project', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:50:34.931643 [info ] [MainThread]: A project called my_project already exists here.
+[0m22:50:34.939644 [debug] [MainThread]: Command `dbt init` succeeded at 22:50:34.938641 after 0.20 seconds
+[0m22:50:34.942646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D21371E7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D21371D390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D20C7C94D0>]}
+[0m22:50:34.944640 [debug] [MainThread]: Flushing usage events
+[0m22:55:06.309179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219F84C2510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219F87BBD50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219F6F74FD0>]}
+
+
+============================== 22:55:06.325180 | e34b89d4-b3a5-49e1-a0ed-7dd751cc2f66 ==============================
+[0m22:55:06.325180 [info ] [MainThread]: Running with dbt=1.7.4
+[0m22:55:06.329182 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:/Users/Elsa/Tugas/Capstone-Project/capstone_brief/dbt_project/Project_B/dbt-profiles', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt init my_project', 'send_anonymous_usage_stats': 'True'}
+[0m22:55:06.335190 [info ] [MainThread]: A project called my_project already exists here.
+[0m22:55:06.344191 [debug] [MainThread]: Command `dbt init` succeeded at 22:55:06.343176 after 0.27 seconds
+[0m22:55:06.346188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219F15194D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219F84D92D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219F14BF610>]}
+[0m22:55:06.349193 [debug] [MainThread]: Flushing usage events
+[0m15:03:41.574063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0F95B6F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0F9393B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0F92BD310>]}
+
+
+============================== 15:03:41.606937 | 67b957ee-ec4b-4b41-a419-e700b1fd6e00 ==============================
+[0m15:03:41.606937 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:03:41.610996 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Elsa\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init my_project', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:03:41.616992 [info ] [MainThread]: A project called my_project already exists here.
+[0m15:03:41.626000 [debug] [MainThread]: Command `dbt init` succeeded at 15:03:41.624997 after 0.24 seconds
+[0m15:03:41.629001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0F26F9B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0F9AC7190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0F246FB50>]}
+[0m15:03:41.630988 [debug] [MainThread]: Flushing usage events

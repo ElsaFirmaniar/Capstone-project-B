@@ -1,0 +1,151 @@
+version: 2
+
+models:
+
+  - name: fct_product_age
+    description: "staging model for product age"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: nama_produk
+        description: "name of the product"
+        tests:
+          - not_null
+      - name: usia_hari
+        description: "age of the product"
+        tests:
+          - not_null
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: ref("stg_product")
+          group_by: [product_id, nama_produk] # (Optional)
+          compare_group_by: [product_id, product_name] # (Optional)
+          factor: 1 # (Optional)
+          row_condition: "product_id is not null" # (Optional)
+          compare_row_condition: "product_id is not null" # (Optional)
+
+  - name: fct_transaction_product
+    description: "staging model for transaction product"
+    columns:
+      - name: transaction_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: jumlah_pembelian
+        description: "number of purchases of the product"
+        tests:
+          - not_null
+    columns:
+      - name: jumlah_penjualan
+        description: "number of sales of the product"
+        tests:
+          - not_null
+    columns:
+      - name: tanggal_transaksi
+        description: "transaction date of the product"
+        tests:
+          - not_null
+    columns:
+      - name: nama_produk
+        description: "name of the product"
+        tests:
+          - not_null
+    columns:
+      - name: tanggal_produksi
+        description: "production date of the product"
+        tests:
+          - not_null
+    tests:
+        - dbt_expectations.expect_table_row_count_to_equal_other_table:
+            compare_model: ref("stg_transaction")
+            group_by: [transaction_id, tanggal_transaksi]  # (Optional)
+            compare_group_by: [transaction_id, transaction_date]  # (Optional)
+            factor: 1  # (Optional)
+            row_condition: "transaction_id is not null"  # (Optional)
+            compare_row_condition: "transaction_id is not null"  # (Optional)
+
+  - name: fct_available_stock
+    description: "staging model for available stock"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: nama_produk
+        description: "name of the product"
+        tests:
+          - not_null
+    columns:
+      - name: jumlah_stok
+        description: "The amount of production stock of the product"
+        tests:
+          - not_null
+    columns:
+      - name: lokasi_gudang
+        description: "Warehouse location of the product"
+        tests:
+          - not_null
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: ref("stg_stock")
+          group_by: [jumlah_stok, lokasi_gudang] # (Optional)
+          compare_group_by: [stock_amount, warehouse_loc] # (Optional)
+          factor: 1 # (Optional)
+          row_condition: "jumlah_stok is not null" # (Optional)
+          compare_row_condition: "stock_amount is not null" # (Optional)
+
+  - name: fct_category_statistic
+    description: "staging model for available category statistic"
+    columns:
+      - name: nama_kategori
+        description: "category name of the product"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: jumlah_produk
+        description: "production quantity of the product"
+        tests:
+          - not_null
+    columns:
+      - name: rata_usia_produk
+        description: "The amount of production stock of the product"
+        tests:
+          - not_null
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: ref("stg_productcategory")
+          group_by: [nama_kategori] # (Optional)
+          compare_group_by: [category_name] # (Optional)
+          factor: 1 # (Optional)
+          row_condition: "nama_kategori is not null" # (Optional)
+          compare_row_condition: "category_name is not null" # (Optional)
+
+  - name: fct_time_analysis
+    description: "staging model for available time analysis"
+    columns:
+      - name: tanggal
+        description: "category name of the transaction date"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: jumlah_transaksi
+        description: "production quantity of the product"
+        tests:
+          - not_null
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: ref("stg_transaction")
+          group_by: [tanggal] # (Optional)
+          compare_group_by: [transaction_date] # (Optional)
+          factor: 1 # (Optional)
+          row_condition: "tanggal is not null" # (Optional)
+          compare_row_condition: "transaction_date is not null" # (Optional)

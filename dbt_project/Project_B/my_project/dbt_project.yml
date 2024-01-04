@@ -38,5 +38,9 @@ models:
       +database: dbt-project
     dbt-stg:
       +materialized: table
-      +schema: Project_B
+      +schema: _stg
+      +database: dbt-project
+    dbt-fct:
+      +materialized: table
+      +schema: _fct
       +database: dbt-project

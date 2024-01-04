@@ -2,58 +2,42 @@ version: 2
 
 models:
 
-  - name: product_age
-    description: "staging model for product age"
+  - name: stg_customer
+    description: "staging model for customer"
+    columns:
+      - name: customer_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "name of the product"
+        tests:
+          - not_null
+    # tests:
+    #       - dbt_utils.equal_rowcount:
+    #           compare_model: ref('customer')
+
+  - name: stg_product
+    description: "staging model for transaction product"
     columns:
       - name: product_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
-      - name: nama_produk
-        description: "name of the product"
-        tests:
-          - not_null
-      - name: usia_hari
-        description: "age of the product"
-        tests:
-          - not_null
-    # tests:
-    #   - dbt_utils.unique_combination_of_columns:
-    #       combination_of_columns:
-    #         - nama_produk
-    #         - usia_hari
-
-  - name: transaction_product
-    description: "staging model for transaction product"
     columns:
-      - name: transaction_id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
-    columns:
-      - name: jumlah_pembelian
-        description: "number of purchases of the product"
-        tests:
-          - not_null
-    columns:
-      - name: jumlah_penjualan
-        description: "number of sales of the product"
-        tests:
-          - not_null
-    columns:
-      - name: tanggal_transaksi
+      - name: transaction_date
         description: "transaction date of the product"
         tests:
           - not_null
     columns:
-      - name: nama_produk
+      - name: product_name
         description: "name of the product"
         tests:
           - not_null
     columns:
-      - name: tanggal_produksi
+      - name: production_date
         description: "production date of the product"
         tests:
           - not_null
@@ -62,67 +46,116 @@ models:
     #       combination_of_columns:
     #         - product_id
 
-  - name: available_stock
-    description: "staging model for available stock"
+  - name: stg_productcategory
+    description: "staging model for product category"
     columns:
-      - name: product_id
+      - name: category_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
     columns:
-      - name: nama_produk
-        description: "name of the product"
+      - name: category_name
+        description: "name of the category"
         tests:
           - not_null
-    columns:
-      - name: jumlah_stock
-        description: "The amount of production stock of the product"
-        tests:
-          - not_null
-    columns:
-      - name: lokasi_gudang
-        description: "Warehouse location of the product"
-        tests:
-          - not_null
-    # tests:
-    #   - dbt_utils.unique_combination_of_columns:
-    #       combination_of_columns:
-    #         - product_id
 
-  - name: category_statistic
-    description: "staging model for available category statistic"
+  - name: stg_stock
+    description: "staging model for stock"
     columns:
-      - name: nama_kategori
-        description: "category name of the product"
+      - name: stock_id
+        description: "The primary key for this table"
         tests:
           - unique
           - not_null
     columns:
-      - name: jumlah_produk
-        description: "production quantity of the product"
+      - name: product_id
+        description: "The primary key of the product"
         tests:
           - not_null
     columns:
-      - name: rata_usia_produk
-        description: "The amount of production stock of the product"
+      - name: warehouse_loc
+        description: "The warehouse location of production stock of the product"
         tests:
           - not_null
-    # tests:
-    #   - dbt_utils.unique_combination_of_columns:
-    #       combination_of_columns:
-    #         - product_id
 
-  - name: time_analysis
-    description: "staging model for available time analysis"
+  - name: stg_supplier
+    description: "staging model for supplier"
     columns:
-      - name: tanggal_transaksi
-        description: "category name of the transaction date"
+      - name: supplier_id
+        description: "The primary key for this table"
         tests:
           - unique
           - not_null
     columns:
-      - name: jumlah_penjualan
-        description: "production quantity of the product"
+      - name: supplier_name
+        description: "supllier name of the product"
+        tests:
+          - not_null
+    columns:
+      - name: supplier_contact
+        description: "supllier contact of the product"
+        tests:
+          - not_null
+
+  - name: stg_timedimension
+    description: "staging model for time dimension"
+    columns:
+      - name: date_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: months
+        description: "month of the product"
+        tests:
+          - not_null
+    columns:
+      - name: years
+        description: "years of the product"
+        tests:
+          - not_null
+
+  - name: stg_transaction
+    description: "staging model for transaction"
+    columns:
+      - name: transaction_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: product_id
+        description: "The primary key of the product"
+        tests:
+          - not_null
+    columns:
+      - name: purchase_amount
+        description: "purchase amount of the transaction"
+        tests:
+          - not_null
+    columns:
+      - name: sales_amount
+        description: "sales amount of the transaction"
+        tests:
+          - not_null
+    columns:
+      - name: transaction_date
+        description: "transaction date of the transaction"
+        tests:
+          - not_null
+
+  - name: stg_warehouse
+    description: "staging model for warehouse location"
+    columns:
+      - name: location_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: location_name
+        description: "warehouse location of the product"
         tests:
           - not_null

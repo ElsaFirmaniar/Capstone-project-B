@@ -14,7 +14,7 @@ SELECT
     , production_date as tanggal_produksi
 from
     {{ ref('stg_transaction') }} stg_transaction
-JOIN
+LEFT JOIN
     {{ ref('stg_product') }} stg_product
 ON
     stg_product.product_id = stg_transaction.product_id

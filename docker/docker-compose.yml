@@ -1,7 +1,6 @@
-version: '3.8'
+version: '3'
 
 services:
-
   master:
     container_name: "${COMPOSE_PROJECT_NAME:-citus}_master"
     image: "citusdata/citus:12.0.0"
@@ -9,9 +8,9 @@ services:
       - "${COORDINATOR_EXTERNAL_PORT:-5432}:5432"
     labels:
       - "com.citusdata.role=Master"
-    environment: &AUTH
+    environment:
       - POSTGRES_PASSWORD=pass
-      - POSTGRES_USER=user
+      - POSTGRES_USER=postgres
       - POSTGRES_DB=dbt-project
       - PGUSER=postgres
       - POSTGRES_HOST_AUTH_METHOD=trust
@@ -20,22 +19,6 @@ services:
     volumes:
       - ./citus-db-data/:/var/lib/postgresql/data/
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-  
-  postgresql:
-    image: postgres:15.2
-    hostname: postgresql
-    container_name: ingestion_data
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: ingestion_data
-    volumes:
-      - ./postgres-data:/var/lib/postgresql/data
-    ports:
-      - 5443:5432
-    networks:
-      - postgres-network
 
   worker:
     image: "citusdata/citus:12.0.0"
@@ -43,7 +26,12 @@ services:
       - "com.citusdata.role=Worker"
     depends_on:
       - manager
-    environment: *AUTH
+    environment:
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=dbt-project
+      - PGUSER=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
     command: "/wait-for-manager.sh"
     volumes:
       - ./citus-healthcheck:/healthcheck
@@ -56,7 +44,35 @@ services:
       - ./citus-healthcheck:/healthcheck
     depends_on:
       - master
-    environment: *AUTH
+    environment:
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=dbt-project
+
+  metabase:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    environment:
+      - MB_DB_FILE=/metabase.db
+
+  postgresql:
+    image: postgres:15.2
+    hostname: postgresql
+    container_name: postgresql
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=ingestion_data      
+      - PGUSER=user
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5443:5432"
+    networks:
+      - postgres-network
 
 networks: 
   postgres-network:
